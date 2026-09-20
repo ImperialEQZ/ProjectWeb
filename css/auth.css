@@ -6,10 +6,10 @@
 }
 
 #login {
-    background: rgba(255, 255, 255, 0.1);  /* полупрозрачный белый */
-    backdrop-filter: blur(15px);  /* размытие фона за карточкой */
-    -webkit-backdrop-filter: blur(15px);  /* для Safari */
-    border: 1px solid rgba(255, 255, 255, 0.2);  /* тонкая рамка */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     padding: 40px;
     width: 400px;
@@ -56,4 +56,8 @@ body {
     background: DarkMagenta;
     border-radius: 40px;
     margin: 30px 0 0 0;
+    color: white;
+}
+#checklogin {
+    color: white;
 }
