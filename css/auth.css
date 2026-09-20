@@ -8,7 +8,6 @@
 #login {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     padding: 40px;
@@ -58,6 +57,25 @@ body {
     margin: 30px 0 0 0;
     color: white;
 }
+
 #checklogin {
     color: white;
+}
+
+#registration {
+    margin-top: 20px;
+    padding-left: 30px;
+}
+
+.field input:hover {
+    border-color: #00008B;
+    border-width: 3px;
+}
+
+.btn:hover {
+    background-color: #9932CC;
+}
+
+.btn:active {
+    background-color: #4B0082;
 }
