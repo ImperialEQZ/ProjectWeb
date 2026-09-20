@@ -1,10 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Market | Главная</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
+
+<header class="header">
+    <div class="container header-container">
+        <a class="logo" href="../assets/index.html">Digital Market</a>
+        <nav>
+            <ul class="menu">
+                <li class="active"><a href="../assets/index.html">Главная</a></li>
+                <li><a href="#">О нас</a></li>
+            </ul>
+        </nav>
+        <a href="../assets/auth.html" class="btn-auth">Регистрация | Вход</a>
+    </div>
+</header>
+
+<main class="container">
+    <section class="products-grid">
+        <!-- Видеокарта -->
+        <div class="product-card">
+            <div class="card-img">
+                <img src="../images/gpu.webp" alt="Товар">
+            </div>
+            <div class="card-info">
+                <h3>Видеокарта RTX 5070</h3>
+                <p>Краткая характеристика товара: 12 ГБ GDDR7, PCIe 5.0, отличная производительность.</p>
+                <div class="card-bottom">
+                    <span class="price">95 000 ₽</span>
+                    <a href="product.html" class="btn-more">Подробнее</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Процессор -->
+        <div class="product-card">
+            <div class="card-img">
+                <img src="../images/cpu.webp" alt="Товар">
+            </div>
+            <div class="card-info">
+                <h3>Процессор Ryzen 7 7800x3d</h3>
+                <p>Краткая характеристика товара: 8 ядер, 16 потоков, L3 кэш 96МБ.</p>
+                <div class="card-bottom">
+                    <span class="price">45 000 ₽</span>
+                    <a href="product.html" class="btn-more">Подробнее</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Материнская плана -->
+        <div class="product-card">
+            <div class="card-img">
+                <img src="../images/motherboard.webp" alt="Товар">
+            </div>
+            <div class="card-info">
+                <h3>Материнская плата </h3>
+                <p>Краткая характеристика товара: Socket AM5, DDR5, Wi-Fi 6E, USB 4.0.</p>
+                <div class="card-bottom">
+                    <span class="price">28 500 ₽</span>
+                    <a href="product.html" class="btn-more">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <!-- Корпус -->
+        <div class="product-card">
+            <div class="card-img">
+                <img src="../images/case.webp" alt="Товар">
+            </div>
+            <div class="card-info">
+                <h3>Корпус LIAN LI Vector V100R</h3>
+                <p>Краткая характеристика товара: E-ATX, Micro-ATX, Mini-ITX, Standard-ATX, Вентиляторы:
+                    4 x 120 мм </p>
+                <div class="card-bottom">
+                    <span class="price">8 300 ₽</span>
+                    <a href="product.html" class="btn-more">Подробнее</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p> 2026 Digital Market. Технологии Web-программирования.</p>
+    </div>
+</footer>
 
 </body>
 </html>

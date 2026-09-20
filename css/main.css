@@ -1,0 +1,141 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+body {
+    background: url('../images/backgroundMain.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Заголовок */
+.header {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 0;
+    margin-bottom: 40px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.menu a {
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.menu a:hover, .menu .active a {
+    color: #d15bee;
+}
+
+/* Кнопка Вход/Регистрация */
+.btn-auth {
+    background: DarkMagenta;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 40px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-auth:hover {
+    background: #a000a0;
+}
+
+/* 4 карточки в строке */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Карточка товара */
+.product-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.card-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-info p {
+    font-size: 14px;
+    color: #ddd;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn-more {
+    background: DarkMagenta;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* Футер */
+.footer {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+    font-size: 14px;
+    color: grey;
+}
