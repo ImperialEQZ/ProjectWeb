@@ -1,0 +1,46 @@
+/* Сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: url('/images/backgroundMain.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+body.auth-page {
+  background: url('/images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+app-root, app-header, app-footer, app-index, app-auth, app-product {
+  display: block;
+  width: 100%;
+}
