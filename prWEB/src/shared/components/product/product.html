@@ -1,0 +1,33 @@
+<main class="container">
+  <a routerLink="/index" class="back-btn">← Назад к каталогу</a>
+
+  @if (loading) {
+    <p style="color: white; text-align: center;">Загрузка...</p>
+  } @else if (product) {
+    <h1 class="product-title">{{ product.name }}</h1>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img [src]="'/images/' + product.image" [alt]="product.name">
+      </div>
+
+      <div class="product-info">
+        <h2>Характеристики</h2>
+        <ul class="specs">
+          @for (spec of (product.specs | keyvalue); track spec.key) {
+            <li>
+              <b>{{ spec.key }}:</b> {{ spec.value }}
+            </li>
+          }
+        </ul>
+
+        <div class="buy-block">
+          <span class="price">{{ formatPrice(product.price) }} ₽</span>
+          <button class="btn-buy">Купить</button>
+        </div>
+      </div>
+    </div>
+  } @else {
+    <p style="color: white; text-align: center;">Товар не найден</p>
+  }
+</main>
