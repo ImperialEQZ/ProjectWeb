@@ -1,0 +1,44 @@
+<div class="auth-wrapper">
+  <div id="login">
+    <h1>{{ mode === 'login' ? 'Авторизация' : 'Регистрация' }}</h1>
+
+    @if (message) {
+      <div class="message" [class.error]="messageType === 'error'" [class.success]="messageType === 'success'">
+        {{ message }}
+      </div>
+    }
+
+    <form (ngSubmit)="onSubmit()">
+      <div class="field">
+        <input
+          type="text"
+          [(ngModel)]="username"
+          name="username"
+          placeholder="Имя пользователя"
+          required
+        >
+      </div>
+      <div class="field">
+        <input
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          placeholder="Пароль"
+          required
+        >
+      </div>
+
+      <button type="submit" class="btn">
+        {{ mode === 'login' ? 'Войти' : 'Зарегистрироваться' }}
+      </button>
+
+      <div id="registration">
+        @if (mode === 'login') {
+          <a (click)="toggleMode()">Нет аккаунта? Зарегистрироваться</a>
+        } @else {
+          <a (click)="toggleMode()">Уже есть аккаунт? Войти</a>
+        }
+      </div>
+    </form>
+  </div>
+</div>
