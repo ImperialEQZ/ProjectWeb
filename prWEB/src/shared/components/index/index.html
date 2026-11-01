@@ -1,0 +1,21 @@
+<main class="container">
+  <section class="products-grid">
+    @for (product of (products$ | async)?.data; track product.id) {
+      <div class="product-card">
+        <div class="card-img">
+          <img [src]="'/images/' + product.image" [alt]="product.name">
+        </div>
+        <div class="card-info">
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.short_description }}</p>
+          <div class="card-bottom">
+            <span class="price">{{ formatPrice(product.price) }} ₽</span>
+            <a [routerLink]="['/product', product.id]" class="btn-more">Подробнее</a>
+          </div>
+        </div>
+      </div>
+    } @empty {
+      <p style="color: white; text-align: center; grid-column: 1 / -1;">Загрузка товаров...</p>
+    }
+  </section>
+</main>
