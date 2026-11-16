@@ -4,6 +4,9 @@ import authRoutes from './routes/auth.routes';
 import productsRoutes from './routes/product.routes';
 import { initializeDatabase } from './database/database';
 
+import swaggerUi from 'swagger-ui-express';
+import { swaggerSpec } from './swagger'
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -24,6 +27,8 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productsRoutes);
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 // Инициализация БД и запуск сервера
 const startServer = async () => {
     try {
@@ -35,6 +40,7 @@ const startServer = async () => {
             console.log(`API доступно по адресу http://localhost:${PORT}/api`);
             console.log(`Товары: http://localhost:${PORT}/api/products`);
             console.log(`Авторизация: http://localhost:${PORT}/api/auth/login\n`);
+            console.log(`Swagger: http://localhost:${PORT}/api-docs`);
         });
     } catch (error) {
         console.error('Не удалось запустить сервер:', error);
