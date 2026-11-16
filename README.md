@@ -18,6 +18,6 @@
 
 ### DevOps и вспомогательные инструменты
 * **Контейнеризация:** Docker & Docker Compose
-* **Тестирование API:** Postman
+* **Тестирование API:** Postman, Swagger
 * **Контроль версий:** Git, GitHub
 * **IDE:** WebStorm
