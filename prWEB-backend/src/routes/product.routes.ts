@@ -6,9 +6,10 @@ import {
     updateProduct,
     deleteProduct
 } from '../controllers/product.control';
-
+import { getAllCategories } from '../controllers/categories.control';
 const router = Router();
 
+router.get('/categories', getAllCategories);
 router.get('/', getAllProducts);
 router.get('/:id', getProductById);
 router.post('/', createProduct);
