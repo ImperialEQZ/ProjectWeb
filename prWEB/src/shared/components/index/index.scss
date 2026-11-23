@@ -99,3 +99,259 @@
     grid-template-columns: 1fr;
   }
 }
+/* Стили на новые методы */
+/* Сообщение когда товаров нет */
+.empty-message {
+  color: white;
+  text-align: center;
+  grid-column: 1 / -1;
+  font-size: 18px;
+  padding: 40px 0;
+}
+
+/* Секция добавления товара (внизу по центру) */
+.add-product-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0 60px;
+  gap: 20px;
+}
+
+.btn-add {
+  background: DarkMagenta;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(139, 0, 139, 0.4);
+}
+
+.btn-add:hover {
+  background: #9932CC;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 0, 139, 0.6);
+}
+
+.create-form {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 25px;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.create-form h3 {
+  color: white;
+  margin: 0 0 5px 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+.create-form input {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.create-form input:focus {
+  border-color: DarkMagenta;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.create-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-submit {
+  background: DarkMagenta;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+
+.btn-submit:hover {
+  background: #9932CC;
+}
+
+.btn-delete {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 0;
+}
+
+.btn-delete:hover {
+  color: #ff6b6b;
+  transform: scale(1.1);
+}
+
+.btn-delete svg {
+  width: 16px;
+  height: 16px;
+}
+
+.create-form select {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.create-form select option {
+  background: #2a2a2a;
+  color: white;
+}
+
+.create-form select:focus {
+  border-color: DarkMagenta;
+}
+
+.category-select {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.category-select option {
+  background: #2a2a2a;
+  color: white;
+  padding: 10px;
+}
+
+.category-select:focus {
+  border-color: DarkMagenta;
+}
+
+.btn-edit {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn-edit:hover {
+  background: rgba(76, 175, 80, 0.2);
+  border-color: #4CAF50;
+  transform: scale(1.1);
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.edit-form h4 {
+  color: white;
+  margin: 0;
+  font-size: 16px;
+}
+
+.edit-form input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-size: 14px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-save {
+  flex: 1;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.btn-cancel {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* Адаптивность для кнопки */
+@media (max-width: 600px) {
+  .add-product-section {
+    margin: 30px 0 40px;
+  }
+
+  .btn-add {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .create-form {
+    padding: 20px 15px;
+  }
+}

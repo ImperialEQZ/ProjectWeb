@@ -1,21 +1,101 @@
 <main class="container">
   <section class="products-grid">
-    @for (product of (products$ | async)?.data; track product.id) {
+    @for (product of products; track product.id) {
       <div class="product-card">
-        <div class="card-img">
-          <img [src]="'/images/' + product.image" [alt]="product.name">
-        </div>
-        <div class="card-info">
-          <h3>{{ product.name }}</h3>
-          <p>{{ product.short_description }}</p>
-          <div class="card-bottom">
-            <span class="price">{{ formatPrice(product.price) }} ₽</span>
-            <a [routerLink]="['/product', product.id]" class="btn-more">Подробнее</a>
+        @if (editingProductId !== product.id) {
+          <div class="card-img">
+            <img [src]="'/images/' + product.image" [alt]="product.name">
           </div>
-        </div>
+          <div class="card-info">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.short_description }}</p>
+            <div class="card-bottom">
+              <span class="price">{{ formatPrice(product.price) }} ₽</span>
+              <div class="card-actions">
+                <a [routerLink]="['/product', product.id]" class="btn-more">Подробнее</a>
+                <button (click)="startEdit(product)" class="btn-edit" title="Редактировать">✏️</button>
+                <button (click)="deleteProduct(product.id)" class="btn-delete" title="Удалить">🗑️</button>
+              </div>
+            </div>
+          </div>
+        }
+
+        <!-- Форма редактирования (inline) -->
+        @if (editingProductId === product.id) {
+          <div class="edit-form">
+            <h4>Редактирование</h4>
+            <input
+              [(ngModel)]="editProductName"
+              name="editName_{{product.id}}"
+              placeholder="Название"
+            >
+            <input
+              [(ngModel)]="editProductPrice"
+              name="editPrice_{{product.id}}"
+              placeholder="Цена"
+              type="number"
+              min="1"
+            >
+            <div class="edit-actions">
+              <button (click)="saveEdit()" class="btn-save">Сохранить</button>
+              <button (click)="cancelEdit()" class="btn-cancel">Отмена</button>
+            </div>
+          </div>
+        }
       </div>
     } @empty {
-      <p style="color: white; text-align: center; grid-column: 1 / -1;">Загрузка товаров...</p>
+      <p class="empty-message">Товары не найдены</p>
     }
   </section>
+
+  <!-- Секция добавления товара -->
+  <div class="add-product-section">
+    <button (click)="toggleCreateForm()" class="btn-add">
+      {{ showCreateForm ? '✕ Отмена' : '+ Добавить товар' }}
+    </button>
+
+    <!-- Форма создания товара -->
+    @if (showCreateForm) {
+      <div class="create-form">
+        <h3>Новый товар</h3>
+
+        <input
+          [(ngModel)]="newProductName"
+          name="newProductName"
+          placeholder="Название товара"
+        >
+
+        <input
+          [(ngModel)]="newProductPrice"
+          name="newProductPrice"
+          placeholder="Цена"
+          type="number"
+          min="1"
+        >
+
+        <select
+          [(ngModel)]="newProductCategoryId"
+          name="newProductCategoryId"
+          (ngModelChange)="onCategoryChange($event)"
+          class="category-select"
+        >
+          <option value="" disabled>Выберите категорию</option>
+          @for (category of categories; track category.id) {
+            <option [ngValue]="category.id">{{ category.name }}</option>
+          }
+        </select>
+
+        <!-- поля характеристик  -->
+        @for (spec of getProductSpecsKeys(); track spec) {
+          <input
+            [(ngModel)]="productSpecs[spec]"
+            [name]="'spec_' + spec"
+            [placeholder]="spec"
+          >
+        }
+
+        <button (click)="createProduct()" class="btn-submit">Создать</button>
+      </div>
+    }
+  </div>
 </main>
